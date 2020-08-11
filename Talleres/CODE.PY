@@ -12,3 +12,4 @@ def caso3 (mensaje):
 def caso4(mensaje):
   for letra in mensaje :
     print (letra)
+    
