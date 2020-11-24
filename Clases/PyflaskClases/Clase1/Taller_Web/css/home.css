@@ -1,0 +1,15 @@
+un {
+    apariencia : botón;
+    decoración de texto : rgb ( 253 ,  88 ,  88 );
+    color : blanco;
+    color de fondo : rgb ( 0 ,  0 ,  3 );
+    ancho : 100 px ;
+    altura : 30 px ;
+    radio del borde : 25 px ;
+    alineación de texto : centro;
+    caja de sombra : 2 px  3 px  rgb ( 37 ,  85 ,  189 );
+    inicio de bloque de relleno de desplazamiento : 15 px ;
+}
+cuerpo {
+    color de fondo : rgb ( 63 ,  68 ,  68 );
+} 

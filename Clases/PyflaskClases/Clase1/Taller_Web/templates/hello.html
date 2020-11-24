@@ -1,0 +1,17 @@
+<! DOCTYPE html >
+< html  lang = " en " >
+< cabeza >
+    < meta  charset = " UTF-8 " >
+    < meta  name = " viewport " content = " width = device-width, initial-scale = 1.0 " >
+    < título > APP | hola </ title >
+    < link  rel = " stylesheet " href = " {{url_for ('static', filename = 'css / hello.css')}} " >
+</ cabeza >
+< cuerpo >
+    < h1 > Bienvenido a mi primera pagina </ h1 >
+    < h2 > Tu ip es: {{userIP}} </ h2 > 
+    < h3 > Tu mascota es: {{mascota}} </ h3 > 
+    < img  src = " {{url_for ('estático', nombre de archivo = 'imágenes / D3pXwJ3UwAg8e9d.jpg')}} " alt = " foto " >  
+    < Un  href = " oye " > vamos a la ruta Hey </ una >
+
+</ cuerpo >
+</ html >

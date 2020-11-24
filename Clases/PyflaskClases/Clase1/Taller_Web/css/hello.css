@@ -1,0 +1,272 @@
+@use postcss-cssnext;
+
+: root {
+    - velocidad de animación : 0,8 s ;
+
+    - color-cielo : # CEF3F1 ;
+
+    --sun-left-color : # FFD300 ;
+    --sun-right-color : # FFEB00 ;
+
+    --cloud-line-width : 200 px ;
+    --cloud-stroke-width : 50 px ;
+    - separación de nubes : 10 px ;
+
+    - color de frente de montaña : # A5A991 ;
+    - color de fondo de montaña : # 6D6F60 ;
+    --mountain-snow-color : # fff ;
+
+    --árbol-a-izquierda-color-hoja : # 00B16A ;
+    - color-de-hoja-de- árbol -derecha : # 3FC380 ;
+
+    - color de fondo : # 9E906E ;
+
+    - color de la hierba : # 2ecc71 ;
+
+    - acuarela : # 00D5E5 ;
+}
+
+html ,  cuerpo {
+    ancho : 100 % ;
+    altura : 100 % ;
+    margen : 0 ;
+}
+
+# envoltorio {
+    ancho : 100 % ;
+    altura : 100 % ;
+    posición : relativa;
+}
+
+  / *
+  * Cielo
+  * ----
+  * /
+
+  # cielo {
+    posición : absoluta;
+    ancho : 100 % ;
+    altura : 80 % ;
+    fondo : var ( --sky-color );
+  }
+
+    # nubes {
+        altura : 30 % ;
+        ancho : 100 % ;
+        posición : absoluta;
+    }
+
+        / * General * /
+        # cloud_line , 
+        # cloud_circle {
+            trazo-linecap : redondo;
+            ancho de trazo : var ( --cloud-stroke-width );
+            trazo : # fff ;
+        }
+
+        # cloud  # cloud_circle : nth-of-type ( 2 ) {
+            transform : translateX ( calc ( var ( --cloud-line-width ) +  var ( --cloud-stroke-width ) +  var ( --cloud-separation )));
+        }
+
+        # cloud  # cloud_circle : nth-of-type ( 3 ) {
+            transform : translateX ( calc ( var ( --cloud-line-width ) +  var ( --cloud-stroke-width ) *  2  +  var ( --cloud-separation ) *  2 ));
+        }
+
+        / * Específico * /
+        # secondClouds {
+            transformar : traducir ( 1200 px ,  350 px ) scaleY ( -1 );
+            animación : segundo-nubes-mostrando calc ( var ( --animation-speed ) *  7.5 ) lineal 0 s  1 ambos , 
+        }
+
+        @keyframes second-clouds- show {
+            desde , 99% { opacidad : 0 ; }
+            a { opacidad : 1 ; };
+        }
+
+        # cloud1 {
+            animación : nube1-movimiento calc ( var ( --animation-speed ) *  36 ) lineal 0 s infinito ambos;
+        }
+
+        @keyframes cloud1-moving {
+            from { transform : translate ( 1300 px ,  100 px ); opacidad : 0 ; }
+            10 % , 50% ,  90 % { opacidad : 0,7 ; }
+            para { transformar : traducir ( 100 px ,  100 px ); opacidad : 0 ; };
+        }
+
+        # cloud2 {
+             animación : nube2-movimiento calc ( var ( --animation-speed ) *  37 ) lineal 0 s infinito ambos;
+        }
+
+        @keyframes cloud2-moving {
+            from { transform : scale ( 0.9 ) translate ( 1200 px ,  200 px ) rotateY ( 180 grados ); opacidad : 0 ; }
+            10 % , 50% ,  90 % { opacidad : .8 ; }
+            para { transformar : escala ( 0.9 ) traducir ( 300 px ,  200 px ) rotarY ( 180 grados ); opacidad : 0 ; };
+        }
+
+        # cloud3 {
+            animación : nube3-movimiento calc ( var ( --animation-speed ) *  38 ) lineal 0 s infinito ambos;
+        }
+
+        @keyframes cloud3-moving {
+            from { transform : scale ( 0.8 ) translate ( 300 px ,  300 px ); opacidad : 0 ; }
+            10 % , 50% ,  90 % { opacidad : .9 ; }
+            para { transformar : escala ( 0.8 ) traducir (-200px ,  300 px ); opacidad : 0 ; };
+        }
+
+        # cloud4 {
+            animación : nube4-movimiento calc ( var ( --animation-speed ) *  39 ) lineal 0 s infinito ambos;
+        }
+
+        @keyframes cloud4-moving {
+            from { transform : scale ( 0.7 ) translate ( 1100 px ,  400 px ) rotateY ( 180 grados ); opacidad : 0 ; }
+            10 % , 50% ,  90 % { opacidad : 1 ; }
+            para { transformar : escala ( 0.7 ) traducir ( 400 px ,  400 px ) rotarY ( 180 grados ); opacidad : 0 ; };
+        }
+
+    # sol {
+        transformar : traducir ( 1100 px ,  0 )
+    }
+
+        # sun-left { relleno : var ( --sun-left-color ); }
+        # sun-right { fill : var ( --sun-right-color ) ;; }
+
+  / *
+   * Montañas
+   * ----
+   * /
+
+  # montañas {
+    ancho : 100 % ;
+    altura : 60 % ;
+    posición : absoluta;
+    abajo : 20 % ;
+  }
+
+    / * General * /
+    # montaña {}
+        # mountainRightSide { fill : currentColor; }
+        # mountainLeftSide  # montaña-nieve   { opacidad : 0.8 ; }
+        # montaña-nieve { relleno : var ( --montaña-nieve-color ); }
+
+    / * Específico * /
+    # backMountains {
+        relleno : color ( var ( --mountain-back-color ) l ( -5 % ));
+        color : var ( --mountain-back-color );
+        animación : back-Mountains- Moving calc ( var ( --animation-speed ) *  20 ) lineal 0 s infinito ambos;
+    }
+
+    @keyframes back-mountains-moving {
+        de { transform : translate ( 0 ,  20 px ) scale ( .9 ); }
+        a { transformar : traducir (-180px ,  20 px ) escala ( .9 ); };
+    }
+
+    # frontMountains {
+        relleno : color ( var ( --mountain-front-color ) l ( -5 % ));
+        color : var ( --mountain-front-color );
+        animation : front-mountains-moving calc ( var ( --animation-speed ) *  10 ) lineal 0 s infinito ambos;
+    }
+
+    @keyframes front-mountains-moving {
+        de { transform : translateX (-200px); }
+        a { transform : translateX (-400px); };
+    }
+
+        # Mountain1 { transformar : translateX (-100px); }
+        # montaña2 { transformar : translateX ( 100 px ); }
+        # montaña3 { transformar : translateX ( 300 px ); }
+        # montaña4 { transformar : translateX ( 500 px ); }
+        # montaña5 { transformar : translateX ( 700 px ); }
+        # montaña6 { transformar : translateX ( 900 px ); }
+        # montaña7 { transformar : translateX ( 1100 px ); }
+        # montaña8 { transformar : translateX ( 1300 px ); }
+        # montaña9 { transformar : translateX ( 1500 px ); }
+        # montaña10 { transformar : translateX ( 1700 px ); }
+        # montaña12 { transformar : translateX ( 200 px ); }
+        # montaña11 { transformar : translateX ( 0 px ); }
+        # montaña13 { transformar : translateX ( 400 px ); }
+        # montaña14 { transformar : translateX ( 600 px ); }
+        # montaña15 { transformar : translateX ( 800 px ); }
+        # montaña16 { transformar : translateX ( 1000 px ); }
+        # mountain17 { transform : translateX ( 1200 px ); }
+        # mountain18 { transform : translateX ( 1400 px ); }
+        # mountain19 { transform : translateX ( 1600 px ); }
+        # mountain20 { transform : translateX ( 1800 px ); }
+
+  / *
+  * Árboles
+  * ----
+  * /
+
+  # árboles {
+    ancho : 100 % ;
+    altura : 60 % ;
+    posición : absoluta;
+    abajo : 20 % ;
+  }
+
+    / * General * /
+    # leftLeaf { fill : var ( --tree-left-leaf-color ); }
+    # rightLeaf { fill : var ( --tree-right-leaf-color ); }
+    # tronco { carrera : # 8F6F40 ; ancho de trazo : 20 px ; }
+
+    / * Específico * /
+    # árbol1 { transformar : translateX ( 0 px ); }
+    # árbol2 { transformar : translateX ( 50 px ); }
+    # árbol3 { transformar : translateX ( 100 px ); }
+    # tree4 { transform : translateX ( 700 px ); }
+    # tree5 { transform : translateX ( 1100 px ); }
+    # tree6 { transform : translateX ( 1200 px ); }
+    # árbol7 { transformar : translateX ( 1400 px ); }
+
+    # firstTrees {
+      animación : primeros árboles en movimiento calc ( var ( --animation-speed ) *  15 ) lineal 0 s infinito ambos;
+    }
+
+    @keyframes first-trees-moving {
+        de { transform : translateX ( 2000 px ); }
+        a { transform : translateX (-1500px); };
+    }
+
+    # secondTrees {
+        animación : segundos-árboles-mostrando calc ( var ( --animation-speed ) *  7.5 ) lineal 0 s  1 ambos , 
+                    segundos-árboles-movimiento calc ( var ( --animation-speed ) *  15 ) linear calc ( var ( --animation-speed ) *  7.5 ) infinito ambos;
+    }
+
+    @keyframes second-trees- shown {
+        desde , 99% { opacidad : 0 ; }
+        a { opacidad : 1 ; };
+    }
+
+    @keyframes second-trees-moving {
+        de { transform : translateX ( 2000 px ); }
+        a { transform : translateX (-1500px); };
+    }
+
+  / *
+   * Suelo
+   * ----
+   * /
+
+  # suelo {
+    ancho : 100 % ;
+    altura : 18 % ;
+    posición : absoluta;
+    abajo : 0 ;
+    fondo : var ( --ground-color );
+  }
+
+  # hierba {
+    posición : absoluta;
+    abajo : 18 % ;
+    altura : 2 % ;
+    ancho : 100 % ;
+    fondo : var ( --color-hierba );
+  }
+
+# agua {
+    posición : absoluta;
+    abajo : 0 ;
+    altura : 14 % ;
+    ancho : 100 % ;
+    fondo : var ( --color de agua );
+} 
