@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APP | lugares</title> 
+    <link rel="stylesheet" href="{{url_for ('static', filename= 'css/lugares.css)}}'">
+    <link rel="stylesheet" href="{{url_for ('static', filename= 'css/lugares.css')}}">
+</head>
+<body>
+    <h1>Estos son los lugares</h1>  
+    <h2>Tu ip es {{userip}}</h2> 
+    <h3>tus lugares son: {{lugares}} </h3> 
+    <img src="{{url_for('static', filename= 'IMAGES/Barichara.jpg')}}" alt="lugares">
+    <img src="{{url_for('static', filename= 'IMAGES/Jardín.jpg')}}" alt="lugares">
+    <img src="{{url_for('static', filename= 'IMAGES/San_Rafael.jpg')}}" alt="lugares">
+    <img src="{{url_for('static', filename= 'IMAGES/Cáceres.jpg')}}" alt="lugares">
+    <img src="{{url_for('static', filename= 'IMAGES/Coveñas.jpg')}}" alt="lugares">
+    <a href="home">vamos a la ruta home</a> 
+    <a href="personajes">vamos a la ruta personajes</a>
+    <a href="/home">vamos a la ruta home</a> 
+    <a href="/personajes">vamos a la ruta personajes</a>
+</body>
+</html>

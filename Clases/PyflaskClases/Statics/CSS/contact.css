@@ -1,0 +1,23 @@
+a{
+    appearance: button; 
+    text-decoration:rgba(231, 144, 13, 0.082); 
+    color: black; 
+    width: 100px;
+    height: 30px;
+    border-radius: 30px; 
+    text-align:  center;
+    box-shadow: coral; 
+    scroll-padding-block-start: 16px;
+} 
+body{
+    margin: 0;
+    background-color: gray; 
+
+} 
+
+h1{
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-top: 0;
+    letter-spacing: .3rem;
+}
