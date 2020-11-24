@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APP | knowus</title> 
+    <link rel="stylesheet" href="{{url_for ('static', filename= 'css/abaout.css')}}">
+</head>
+<body>
+    <h1>Breve reseña de la clínica: 
+        "La IPS CES Sabaneta es un centro de servicio docente asistencial, 
+        donde ofrecen atención ambulatoria en odontología, dermatología, 
+        fisioterapia, nutrición y psicología. 
+        Los profesionales cuentan con un excelente perfil académico, 
+        orientado a ofrecer atención de calidad y con alto compromiso ético. 
+        Cuentan con tecnología de punta que apoya la prestación de servicios,
+        la docencia y la investigación ayudando a la toma de decisiones acertadas
+        en pro de la seguridad del paciente."
+
+    </h1> 
+    <h2>tu ip es {{userip}}</h2> 
+    <h3>tus doctores son {{Informacion}}</h3> 
+
+    <img src="{{url_for('static', filename= 'images/uno.jpg')}}" alt="knowus">
+    <img src="{{url_for('static', filename= 'images/dos.jpg')}}" alt="knowus">
+    <img src="{{url_for('static', filename= 'images/tres.jpg')}}" alt="knowus">
+    <img src="{{url_for('static', filename= 'images/cuatro.jpg')}}" alt="knowus">
+       
+    <a href="patients">Ir a patients</a>
+    <a href="curious">Ir a curious</a>
+    <a href="doctors">Ir a doctors</a>
+    <a href="home">Ir a home</a> 
+    <a href="contact">Ir a contact</a>
+
+    <a href="/patients">Ir a patients</a>
+    <a href="/curious">Ir a curious</a>
+    <a href="/doctors">Ir a doctors</a>
+    <a href="/home">Ir a home</a> 
+    <a href="/contact">Ir a contact</a>
+
+</body>
+</html>
